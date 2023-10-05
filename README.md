@@ -28,21 +28,18 @@ After the model is trained, you should see the trained vectors in the output fol
 
 ### NSMC
 
-
-First, to generate embeddings for all words in NSMC
+First, to generate embeddings for all words in NSMC  
+Model path can changed in argument parser of train.py file
 ```python
-from produce_emb import gen_embeddings_for_vocab
-vocab_path = "extrinsic/rnn_ner/output/words.txt"
-emb_path = "extrinsic/rnn_ner/output/love.emb"
-gen_embeddings_for_vocab(vocab_path=vocab_path, emb_path=emb_path)
+python produce_emb.py
 ```
-Then, to train a Bi-LSTM-CRF model based on the embeddings obtained by LOVE
-Go to the folder ```extrinsic/rnn_ner``` and run the script:
+Then, to train a Bi-LSTM-Attention model based on the embeddings obtained by LOVE
+Go to the folder ```nsmc``` and run the script:
 ```
-cd extrinsic/rnn_ner
-python main.py
+cd nsmc
+python nsmc.py ./vector/nsmc.vec
 ```
-After, you can see scores like this:
+After, you can see scores like this and get submission file for test dataset:
 ```
 accuracy:  95.35%; precision:  83.83%; recall:  76.03%; FB1:  79.74
 test acc on test set: 79.74
