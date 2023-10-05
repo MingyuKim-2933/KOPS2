@@ -29,7 +29,7 @@ After the model is trained, you should see the trained vectors in the output fol
 ### NSMC
 
 First, to generate embeddings for all words in NSMC  
-Model path can changed in argument parser of train.py file
+You can change the model_path in argument parser of train.py file
 ```python
 python produce_emb.py
 ```
